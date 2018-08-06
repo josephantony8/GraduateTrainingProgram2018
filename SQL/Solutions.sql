@@ -130,6 +130,28 @@ D05|FINANCE|56660.3333333333
  
 94324
 
+15)Select the department which spends the least with Dept id and Dept manager name
+
+select e.dept_id,d.dept_manager, avg(salary) from employee e inner join dept d where e.dept_id=d.dept_id group by(e.dept_id) order by avg(salary) limit 1;
+
+record count-1
+
+D02|ADAM JUSTIN|48271.3333333333
+
+16)Select the count of Employees in each department
+
+ select dept_id,count(*) from employee group by(dept_id);
+ 
+record count-5
+
+D01|6
+D02|6
+D03|2
+D04|3
+D05|3
+
+
+
 
 
 

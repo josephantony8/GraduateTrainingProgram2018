@@ -150,6 +150,36 @@ D03|2
 D04|3
 D05|3
 
+17)Select the count of Employees in each department having salary <10000
+
+ select dept_id,count(*) from employee where salary<10000 group by(dept_id);
+ 
+record count-0
+
+18)Select the total number of Employees in Dept id D04
+
+select * from employee where dept_id='D04'; 
+
+record count-3
+
+A187|ROBERT SWIFT|D04|27700|A298
+A142|TARA CUMMINGS|D04|99475|A187
+A130|VANESSA PARY|D04|28565|A187
+
+19)Select all department details of the Department with Maximum Employees
+
+ select e.dept_id, d.dept_name,d.dept_manager,count(*) from employee e inner join dept d where e.dept_id=d.dept_id  group by(d.dept_id) limit 2;
+
+record count-2
+
+D01|HEALTH|TIM ARCHER|6
+D02|COMMUNICATIONS|ADAM JUSTIN|6
+
+20)Select the Employees who has Tim Cook as their manager
+
+ select * from employee where manager_id=(select e_id from employee e inner join dept d where e.dept_id=d.dept_id and e.name=d.dept_manager and d.dept_manager='Tim Cook');
+
+record count-0
 
 
 

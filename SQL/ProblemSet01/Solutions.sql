@@ -145,4 +145,10 @@
  select h.name,h.city from hotel h inner join room r where r.hotel_no=h.hotel_no and r.price=(select max(price) from room);
  reord count-1
  Park Place|New York
+ 
+ 14.List hotel names, room numbers, cities, and prices for hotels that have rooms with prices lower than the lowest priced room in a Boston hotel.
+ select h.name,r.room_no,h.city,r.price from hotel h inner join room r where h.hotel_no=r.hotel_no and r.price<(select min(price) from room where hotel_no in(select hotel_no from hotel where city='Boston'));
+ record count-2
+ Brownstone Hotel|876|Toronto|124
+ Brownstone Hotel|898|Toronto|124
 

@@ -1,12 +1,18 @@
 
 1. What is a fast-forward merge? When do you get a fast-forward merge in git?
+ 
   A fast-forward merge merges the master and branch in a linear merge by moving the HEAD of the master to the HEAD of the branch.
-  It occurs when the master's HEAD has no changed after creating a branch from it.
+  It occurs when the master's HEAD has not changed after creating a branch from it.
+
 2. What is a branch and why do you create a branch?
+ 
   A branch holds and points to all the changes in the repository. A branch is created to promote parallel development and isolate code. 
+
 3. Which of the following commands is used to create a branch in git
 
 a. Git clone newbranch b. git checkout branchname c. Git branch -a branchname d. git checkout -b branchname
+  
+  git checkout -b  branchname
 
 4. Which of the following statements is true.
 
@@ -14,13 +20,33 @@ a. Github is a web-based hosting service for git repositories.
 b. Git is a licensed, centralized version control tool.
 c. Git is an distributed,opensource version control tool
 d. git checkout can be used to create a working copy on your local machine.
+   
+  a and c
 
 5. Demonstrate collaborative functioning in GIT. From each team, one repository is to be used as a remote repo. All team-members must have atleast commit on the repository. 
 use Tortoisegit/Gitbash to achieve this.
 
 6. What is a merge conflict and when does a merge conflict arise?
+
+  A merge conflict is an issue that arises when two different branches has modified their common source code and tries to merge it.
+
 7. What is a  tracking branch in git and how do you set up a tracking branch?
+  
+  A tracking branch is the one which the remote reposotiry is currently connected with and all the push and pull operations are defined for this branch.
+  
+
 8. You have a cloned copy of a remote git repository on your machine. Due to connectivity issues, your machine is not able to connect to the internet. In absence of connectivity
 Will you be able to see the history of changes on the repository?
-9. Which command helps you to view the list of commits made in the git repository? 
+  
+  Yes.
+
+9. Which command helps you to view the list of commits made in the git repository?  
+ 
+  git log
+
 10. What is the difference between a fork and a clone in GIT?
+  
+  Fork is creating a copy of a source code and making changes without affecting the source.
+  Clone is creating a copy of the remote repository, making changes and pushing the changes to the remote and also pulling the changes that made in the 
+  remote repository
+  

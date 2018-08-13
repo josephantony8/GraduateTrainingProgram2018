@@ -1,0 +1,11 @@
+1) What are the most important sql commands
+2)What is an Entity,Attribute,Record,operator
+3)Why is it essential to select columns in a resultset instead of doing a select *.What is the use of distinct
+4)What is the difference between Where and Having
+5)What are the different operators used in Where.difference between And not and OR
+6)what is the difference between Group by and order by when do we use them
+7)What is an aggregate function.Specify the different types of aggregate functions
+8)What is a constraint.What is a primary key,Foreign key?Why do we use them
+9)What is an index?Why do we use indexing?
+10)What is an view.
+11)Specify the different type of joins with an example?

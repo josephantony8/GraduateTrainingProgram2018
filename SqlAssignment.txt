@@ -1,11 +1,57 @@
+    SqlAssignment, August 13 2018
+    Submission by j.antony.arockiaraj@accenture.com 
+
+
 1) What are the most important sql commands
+  DDL: CREATE, DROP, ALTER, TRUNCATE
+  DQL: SELECT
+  DML: INSERT, UPDATE, DELETE
+  DCL: GRANT, REVOKE
+  TCL: COMMIT, ROLLBACK
+
 2)What is an Entity,Attribute,Record,operator
+  An entity is a real world object that we store information about. Example: Employee
+  An attribute is the characteristic of the entity. Example: Salary
+  A record is a collection of attributes of an entity.
+  Operators are used to specify conditions in the WHERE clause while retrieving results.
+
 3)Why is it essential to select columns in a resultset instead of doing a select *.What is the use of distinct
+   A database will contain billions of records. So retrieving using select * might crash the server. So, the records are filtered 
+   and retrieved.
+   Distinct displays all the values in a column only once irrespective of their count.
+
 4)What is the difference between Where and Having
+   WHERE is used to set a condition on a row and is done before using aggregation functions. HAVING is used to set a condition for the      result of aggregate function
+
 5)What are the different operators used in Where.difference between And not and OR
+  Comparison Operators and Logical Operators. AND operator is used when there are multiple conditions have to be satisfied. OR is used     when any one of the specified conditions have to be satisfied. NOT is used when a specific condition must not be met.
+
 6)what is the difference between Group by and order by when do we use them
+  Group by is used when the aggregate functions are to be used and the result has to be grouped according to a column. Order by 
+  displays the result in sorted order.
+
 7)What is an aggregate function.Specify the different types of aggregate functions
+  Aggregate functions are used to perform numeric computations on the columns of a table. The different aggregate functions are avg(),
+  count(),min(),max(),sum()
+
 8)What is a constraint.What is a primary key,Foreign key?Why do we use them
+  A constraint is a rule or condition specified for the insertion of data in a table. A primary key is combination of unique and not  
+  null constraint.It is used so that we can retrieve each record based on it's unique value of an attribute. Foreign key is used to  
+  enforce a link between tables and it ensures referential integrity. Foreign key uniquely identifies a row in its parent table.
+
 9)What is an index?Why do we use indexing?
+  An index is a pointer to the data in various tables. Indexing is used for the fast retrieval of records.
+
 10)What is an view.
+  View is a virtual version of the table formed by the collection of columns from multiple table that exists in the database.
+
 11)Specify the different type of joins with an example?
+  Inner join returns all the records from both the tables when the condition is satisfied.
+  Example: select h.name, r.room_no from hotel h inner join room r on h.hote_no=r.hotel_no
+  Left Outer Join return all the records from the left table and the matching rows on the right. If there is no value for a column in right   NULL is added.
+  Example: select h.name, h.city, g.guest_id from hotel h left join guset g on h.hotel_no=g.hotel_no
+  Right outer join returns all records from the right table and matching rows on the left. Null value is added if there is no value in 
+  the left column.
+  Example: select b.date_from,b.date_to, h.hotel_no, h.city_ from booking b right join hotel h on b.hotel_no=h.hotel_no
+  Full outer join returns all the records from both the tables and with a null value for fields where a value is not specified.
+  Example: select e.firstname, e.lastname,d.dept_id,d.dept_name from employee e full join dept d on e.employee_id=d.employee_id

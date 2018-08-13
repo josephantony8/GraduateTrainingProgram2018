@@ -1,0 +1,35 @@
+1. What is meant by a Working copy in Version control?
+   A working copy is a current version of a file which resides in the repository which the git will listen for staging and making changes. Once the changes in the 
+   working copy need to be reflected in the repository a commit is made.
+
+
+2. Which Git command is used to create a working copy of a repository on your machine?
+   git init
+
+3. What is the use of the GIT pull command?
+   The GIT pull command is used to fetch the content from a remote repository to the local repository.
+
+4. Which GIT command is used to move an untracked change into the staging area?
+   git add 'filename'
+
+5. How do you set up your SSH key settings in Github? What is the use of setting up SSH key?
+
+6. What is meant by a Branch in Version control? How do you create a new branch in GIT?
+   A branch holds and points to the changes in the source code from where it is created(master). 
+   git checkout -b <branchname>
+
+7. Which branch gets created by default when you first create a repository in GIT?
+   Master branch is created when a repository is created in GIT.
+
+8. Which of these facts about GIT is accurate?
+   Changes made to files in GIT can be reversed by reverting to an earlier version of the file.
+   GIT is an open-source ,distributed version control tool.
+
+9. What is the difference between Git and Github?
+   GIT is a distributed source version control tool for managing history of the source code whereas Github hosts git services with additional features.
+
+10. What is meant by a repository in version control?
+   A repository is a shared storage which contains the history of all the changes made by different developers.
+
+
+    

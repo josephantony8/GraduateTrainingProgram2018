@@ -4,7 +4,7 @@
 
 
 1.Write a valid SQL statement that calculates the total weight of all corn cobs that were picked from the garden:
-  select sum(weight) from picked group by plantFK having plantFK=2;
+ select sum(pi.weight) from plant p inner join picked pi on p.plantid=pi.plantFK and p.name='Corn';
 
   17.54
 

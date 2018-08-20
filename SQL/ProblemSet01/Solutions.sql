@@ -129,7 +129,10 @@
  4
 
  11.List the names and cities of guests who began a stay in New York in August.
- 
+ select g.name,g.city from guest g inner join booking b on b.guest_no=g.guest_no inner join hotel h on h.hotel_no=b.hotel_no where b.date_from like '%AUG%' and h.city='New York';
+ record count-2
+ ADAM WAYNE|PITTSBURGH
+ TARA CUMMINGS|BALTIMORE
  
  12.List the hotel names and room numbers of any hotel rooms that have not been booked.
  select h.hotel_no,r.room_no from hotel h inner join room r where h.hotel_no=r.hotel_no and r.room_no not in(select distinct room_no from booking);
@@ -151,4 +154,11 @@
  record count-2
  Brownstone Hotel|876|Toronto|124
  Brownstone Hotel|898|Toronto|124
+ 
+ 15.List the average price of a room grouped by city.
+ select distinct h.city,avg(price) from hotel h inner join room r on r.hotel_no=h.hotel_no group by h.city;
+ record count-3
+ Boston|155.0
+ New York|165.0
+ Toronto|147.0
 

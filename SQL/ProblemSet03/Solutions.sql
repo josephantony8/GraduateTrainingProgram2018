@@ -87,6 +87,9 @@ Raiders of the Lost Ark|4
 Sort by rating spread from highest to lowest, then by movie title. 
 
 select m.title, max(ra.stars)-min(ra.stars) as rating_spread from movie m inner join rating ra on m.mID=ra.mID group by m.mID order by rating_spread desc,m.title;
+
+row count-6
+
 Avatar|2
 Gone with the Wind|2
 Raiders of the Lost Ark|2
@@ -94,6 +97,11 @@ E.T|1
 Snow White|1
 The Sound of Music|1
 
+9.Find the difference between the average rating of movies released before 1980 and the average rating of movies released after 1980. 
+
+select avg(A)-avg(B) from(select avg(stars) as A from rating r inner join movie m on r.mID=m.mID group by r.mID having year<1980),(select avg(stars) as B from rating r inner join movie m on r.mID=m.mID group by r.mID having year>1980);
+
+0.0555555555555558
 
 10.Find the names of all reviewers who rated Gone with the Wind.
 
@@ -112,6 +120,29 @@ row count-1
 
 James Cameron|Avatar|5
 
+12.Return all reviewer names and movie names together in a single list, alphabetized.
+
+select distinct title from movie  union all select distinct name from reviewer order by title;
+
+row count-16
+
+Ashley White
+Avatar
+Brittany Harris
+Chris Jackson
+Daniel Lewis
+E.T
+Elizabeth Thomas
+Gone with the Wind
+James Cameron
+Mike Anderson
+Raiders of the Lost Ark
+Sarah Martinez
+Snow White
+Star Wars
+The Sound of Music
+Titanic
+
 13.Find the titles of all movies not reviewed by Chris Jackson.
 
 select title from movie where mID NOT IN(select ra.mID from rating ra inner join reviewer r on r.rID=ra.rID where r.name='Chris Jackson');
@@ -123,6 +154,19 @@ Star Wars
 Titanic
 Snow White
 Avatar
+
+
+14.For all pairs of reviewers such that both reviewers gave a rating to the same movie, return the names of both reviewers. Eliminate duplicates, don't pair reviewers with themselves, and include each pair only once. For each pair, return the names in the pair in alphabetical order. 
+
+select re.name,re1.name from rating r1 inner join rating r2 on r1.rID<>r2.rID and r1.mID=r2.mID and r1.rID<r2.rID inner join reviewer re on re.rID=r1.rID inner join reviewer re1 on re1.rID=r2.rID group by r1.rID,r2.rID order by re.name;
+
+row count-5
+
+Brittany Harris|Chris Jackson
+Chris Jackson|Ashley White
+Daniel Lewis|Elizabeth Thomas
+Elizabeth Thomas|James Cameron
+Sarah Martinez|Mike Anderson
 
 
 15.For each rating that is the lowest (fewest stars) currently in the database, return the reviewer name, movie title, and number of stars.

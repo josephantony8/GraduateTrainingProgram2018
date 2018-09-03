@@ -1,0 +1,102 @@
+5) Write a Python program to check whether a year is leap year or not
+
+   year=int(raw_input("Enter the year"))
+   if year%4==0:
+       if year%100==0:
+           if year%400==0:
+               print("%i is a leap year" %year)
+	         else:
+               print("%i is not a leap year" %year)
+       else:
+           print("%i is a leap year" %year)
+   else:
+       print("%i is not a leap year" %year)
+                             
+
+6)Write a program that accepts a sentence and calculate the number of upper case letters and lower case letters.
+
+Suppose the following input is supplied to the program:
+Hello world!
+Then, the output should be:
+UPPER CASE 1
+LOWER CASE 9
+
+  sentence=raw_input("Enter the Sentence")
+  u=[]
+  l=[]
+  s=[]
+  for i in sentence:
+      b=i.isupper()
+      c=i.islower()
+      if b==True:
+          u.append(i)
+      elif c==True:
+          l.append(i)
+      else:
+          s.append(i)
+  l1=len(u)
+  l2=len(l)
+  print("UPPER CASE %i" %l1)
+  print("LOWER CASE %i" %l2)
+
+
+7)  write a python script to validate the strong password (combination of characters alphabets and numbers,special characters in it. if not weak password)
+eg: Acc9876$
+it is strong password
+abcd
+it is weak password
+
+  pwd=raw_input("Enter the password")
+  cos=0
+  cou=0
+  con=0
+  col=0
+  sp=['$','#','@','%','-','_','.']
+  sp1=['"']
+  for i in pwd:
+      if i in sp or i in sp1:
+          cos+=1
+      elif i.isalpha()==True:
+          if i.isupper()==True:
+              cou+=1
+          else:
+              col+=1
+      elif i.isdigit()==True:
+          con+=1
+  if cou>=1 and col>=1 and con>=1 and cos>=1:
+      print("It is a Strong Password") 
+  else:
+      print("It is a Weak Password")    
+
+
+8) declare a list containing numbers
+    a) get only even numbers
+    b) perform sum of those even numbers
+   
+ num=raw_input("Enter the numbers")
+ li=list(map(int,num.split()))
+ print(li)
+ sum=0
+ for i in li:
+     if(i%2==0):
+     sum+=i
+ print sum
+
+ 
+
+9) Write a program which accepts a sequence of comma-separated numbers from console and generate a list and a tuple which 
+contains every number.
+Suppose the following input is supplied to the program:
+34,67,55,33,12,98
+Then, the output should be:
+['34', '67', '55', '33', '12', '98']
+('34', '67', '55', '33', '12', '98')
+
+ number=raw_input("Enter the values")
+ li=list(number.split(','))
+ print(li)
+ tu=tuple(li)
+ print(tu)
+
+
+

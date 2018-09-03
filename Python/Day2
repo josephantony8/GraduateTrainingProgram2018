@@ -26,11 +26,9 @@ LOWER CASE 9
   l=[]
   s=[]
   for i in sentence:
-      b=i.isupper()
-      c=i.islower()
-      if b==True:
+      if i.isupper()==True:
           u.append(i)
-      elif c==True:
+      elif i.islower()==True:
           l.append(i)
       else:
           s.append(i)

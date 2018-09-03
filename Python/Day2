@@ -51,8 +51,9 @@ it is weak password
   col=0
   sp=['$','#','@','%','-','_','.']
   sp1=['"']
+  sp2=["'"]
   for i in pwd:
-      if i in sp or i in sp1:
+      if i in sp or i in sp1 or i in sp2:
           cos+=1
       elif i.isalpha()==True:
           if i.isupper()==True:

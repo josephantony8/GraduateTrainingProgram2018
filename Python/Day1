@@ -25,13 +25,20 @@
  print(a)
  total=str(sum(a))
  print(total)
- #print(type(total)) 
  n=0
+ nu=0
  for i in total:
-	 #if (i.isdigit()):
-	     #print(i)
-	     n+=int(i)
- print(n)
+     n+=int(i)
+ no=str(n)
+ for i in no:
+     nu+=int(i)
+ print(nu)
+
+
+
+
+
+   
  
  4) Write a Python program to perform sum of three given integers. 
  However, if any of the two values are equal then sum will be zero (eg : 2+1+1 = 0)

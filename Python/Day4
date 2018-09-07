@@ -1,0 +1,39 @@
+1.ou are asked to ensure that the first and last names of people begin with a capital letter in their passports. For example, alison heck should be capitalised correctly as Alison Heck.
+alison heck => Alison Heck
+Given a full name, your task is to capitalize the name appropriately.
+
+  full_name=raw_input("Enter the string")
+  capitalized_name=[]
+  name_list=full_name.split(' ')
+  if len(full_name)<1000:
+	  for i in name_list:
+		  firstchar=i[0:]
+		  if firstchar.isalpha()==True:
+			  capitalized_name.append(i.title())
+		  else:
+			  capitalized_name.append(i)
+	  full_name_capitalized=' '.join(capitalized_name)
+	  print(full_name_capitalized)
+  else:
+	  print("String is exceeding the length")
+    
+    
+2.You have a record of  students. Each record contains the student's name, and their percent marks in Maths, Physics and Chemistry.
+The marks can be floating values. The user enters some integer  followed by the names and marks for students.
+You are required to save the record in a dictionary data type. The user then enters a student's name. Output the average percentage marks obtained by that student, correct to two decimal places.
+
+  stu_count=int(raw_input("Enter the no of students"))
+  stu_dic={}
+  for i in range(stu_count) :
+	  marks =[]
+	  name_marks=raw_input("Enter the student name and marks")
+	  detail_list=name_marks.split(' ')
+	  name=detail_list[0]
+	  for j in range(len(detail_list)-1):
+		  marks.append(int(detail_list[j+1]))
+	  stu_dic[name]=marks
+ print(stu_dic)
+ stu_name=raw_input("Enter the name")
+ average=sum(stu_dic[stu_name])/len(stu_dic[stu_name])
+ print(float(average))
+

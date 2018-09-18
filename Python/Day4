@@ -36,4 +36,36 @@ You are required to save the record in a dictionary data type. The user then ent
  stu_name=raw_input("Enter the name")
  average=sum(stu_dic[stu_name])/len(stu_dic[stu_name])
  print(float(average))
+ 
+ 
+ 3.Task:-
+   You are given two values a and b . 
+   Perform integer division and print a/b .
+
+  Input Format:-
+  The first line contains T , the number of test cases. 
+  The next T lines each contain the space separated values of a and b .
+
+  Constraints:-
+  * 0 < T < 10
+
+  Output Format
+  Print the value of . 
+  In the case of ZeroDivisionError or ValueError, print the error code.
+  
+  
+  def div(number1,number2):
+	try:
+		result=int(number1)/int(number2)
+		print(int(result))
+	except Exception as error:
+		print(error)
+ test_case=int(raw_input("Enter the number of test cases"))
+ for i in range(test_case):
+	 number1=raw_input("Enter first value")
+	 number2=raw_input("Enter second value")
+	 div(number1,number2)
+
+		
+	
 
